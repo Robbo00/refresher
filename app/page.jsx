@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const topics = [
   { id: "web", number: "01", label: "Computer science", title: "Web development", person: "Robert", accent: "mint", icon: "</>", intro: "Turning ideas into useful, accessible experiences that live in the browser.", points: ["Front-end craft", "Back-end logic", "Human-centered design"], question: "How do we make the web feel effortless?" },
-  { id: "ai", number: "02", label: "Computer science", title: "Artificial intelligence", person: "Brandon", accent: "coral", icon: "✦", intro: "Exploring how machines learn patterns, make predictions, and work alongside us.", points: ["Machine learning", "Data & patterns", "Responsible innovation"], question: "What becomes possible when tools can learn?" },
-  { id: "games", number: "03", label: "Computer science", title: "Video games", person: "Christhian", accent: "yellow", icon: "◈", intro: "Building interactive worlds where code, story, art, and play meet.", points: ["Game systems", "Immersive storytelling", "Playful problem-solving"], question: "Why do some digital worlds stay with us?" },
-  { id: "communication", number: "04", label: "Communication", title: "People & meaning", person: "Eli", accent: "blue", icon: "◌", intro: "Understanding how messages travel, connect people, and shape the way we see the world.", points: ["Clear messaging", "Media & culture", "Connection"], question: "How does the right message move a room?" },
+  { id: "ai", number: "02", label: "Computer science", title: "Artificial intelligence", person: "Brandon", accent: "coral", icon: "✦", intro: "How much did you know already? Do you want to know more?", points: ["ChatGPT", "Gemini", "Claude"], question: "How do you decide what to tell me when I ask you things?" },
+  { id: "games", number: "03", label: "Computer science", title: "Video games", person: "Christhian", accent: "yellow", icon: "◈", intro: "Understand how games turn player actions into interactive experiences.", points: ["Programming", "Algorithms", "Game Design"], question: "How does Computer Science turn a player's actions into interactions and experiences?" },
+  { id: "communication", number: "04", label: "Communication", title: 'The "us" of identity ', person: "Eli", accent: "blue", icon: "◌", intro: "Communication helps us understand how our interactions are shaped by our group and cultural identities.", points: ["Cross-Cultural Interaction", "Group identity", "Relationships"], question: "How do cultural group identities shape our relationships and interactions in various contexts?" },
 ];
 
 function TopicPanel({ topic }) {
@@ -32,10 +32,10 @@ export default function Home() {
       <div className="hero__stamp" aria-label="Three computer science majors and one communication major"><span className="stamp__orbit stamp__orbit--one" /><span className="stamp__orbit stamp__orbit--two" /><strong>03<br />CS</strong><span className="stamp__plus">+</span><strong>01<br />COM</strong></div><div className="hero__index">01 <span /> 04</div>
     </section>
     <section className="topics" id="topics">
-      <div className="section-heading"><div><p className="kicker"><span className="kicker__line" /> The breakdown</p><h2>Three lenses<br /><em>on the same field.</em></h2></div><p className="section-heading__note">Select a perspective to see what each of us brings to the conversation.</p></div>
+      <div className="section-heading"><div><p className="kicker"><span className="kicker__line" /> The breakdown</p><h2>Three lenses<br /><em>on the same field.</em></h2></div><p className="section-heading__note">Pick an area to see what we have to offer you.</p></div>
       <div className="topic-tabs" role="tablist" aria-label="Presentation topics">{topics.map((topic) => <button className={`topic-tab topic-tab--${topic.accent} ${activeTopic === topic.id ? "is-active" : ""}`} key={topic.id} onClick={() => setActiveTopic(topic.id)} role="tab" aria-selected={activeTopic === topic.id} aria-controls="active-topic"><span>{topic.number}</span><strong>{topic.title}</strong><i aria-hidden="true">↗</i></button>)}</div>
       <div id="active-topic" role="tabpanel" className="active-topic"><TopicPanel topic={active} /><aside className="throughline"><p className="kicker"><span className="kicker__line" /> The throughline</p><p>Different tools. Different questions. <strong>Still, we are all making ways for people to connect with ideas.</strong></p><span className="throughline__mark" aria-hidden="true">+</span></aside></div>
     </section>
-    <footer className="site-footer"><span>Group presentation / 2026</span><span>Keep asking better questions <b>↗</b></span></footer>
+    <footer className="site-footer"><span>Group presentation / 2026</span><span>Stay curious <b>↗</b></span></footer>
   </main>);
 }
